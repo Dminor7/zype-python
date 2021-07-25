@@ -2,7 +2,7 @@ zype-python
 ===========
 
 A simple wrapper around Zype API. 
-
+This wrapper is used in [Airflow Zype Provider](https://github.com/Dminor7/airflow-provider-zype)
 It is really easy to use it. To illustrate, in order to get all videos from your account, you can simply do:
 
 ```python
