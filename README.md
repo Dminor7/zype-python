@@ -1,45 +1,40 @@
 zype-python
 ===========
 
-A simple wrapper around Zype API. For instance, you can use the module to build custom web apps based on Python frameworks, like Flask, Django.
+A simple wrapper around Zype API. 
 
 It is really easy to use it. To illustrate, in order to get all videos from your account, you can simply do:
 
 ```python
 from zype import Zype
-client = Zype(api_key="<YOUR API KEY>")
-videos = client.get('videos')
-if videos is not None:
-    for v in videos:
-        print v.title
+
+client = Zype(api_key="<YOUR_API_KEY>")
+
+videos = client.list_videos().get()
+video_data = [video().data for video in videos().pages()]
 ```
 
-Installation
-------------
+```python
+from zype import Zype
 
-`$ pip install zype`
+client = Zype(api_key="<YOUR_API_KEY>")
 
-Contribute
-----------
+videos = client.list_videos().get()
+for video in videos().pages(max_items=10):
+        print(video.title().data)
+```
 
-- Issue tracker: [https://github.com/zype/zype-python/issues](https://github.com/zype/zype-python/issues)
-- Source code: [https://github.com/zype/zype-python](https://github.com/zype/zype-python)
+Open documentation
+```python
+videos = client.list_videos().open_docs()
+```
+Change api root to *analytics*
 
-Setting up the project
-----------------------
-
-1. Clone the project `git clone https://github.com/zype/zype-python.git`
-2. Then, in the project root (`$ cd zype-python`):
-	* 	`$ virtualenv venv`
-	* 	`$ . venv/bin/activate`
-	* 	`$ pip install -r requirements.txt`
-3. Run tests `python setup.py test`
-
-Support
--------
-
-If you are having issues, please let me know: **khurshid@zype.com**
-
+```python
+client = Zype(api_key=api_key, api_root="https://analytics.zype.com")
+stream_hours = client.list_stream_hours().get()
+print(stream_hours().data)
+```
 License
 -------
 

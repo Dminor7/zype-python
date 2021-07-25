@@ -1,5 +1,6 @@
 # Compiled python modules.
 *.pyc
+__pycache__
 
 # Setuptools distribution folder.
 dist
@@ -13,11 +14,11 @@ dist
 # Build folder.
 build/
 
-# Ignore the config file for testing
-config.ini
-
 # Ignore virtual env files and folders
 venv
 
 # Ignore .eggs
 .eggs
+
+# Ignore pytest cache
+.pytest*
