@@ -1,3 +1,4 @@
-__author__ = "Khurshid Fayzullaev"
+__version__ = "0.3.0"
+__author__ = "Darsh Shukla"
 
-from zype import Zype
+from .zype import Zype
