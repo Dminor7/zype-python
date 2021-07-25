@@ -35,6 +35,19 @@ client = Zype(api_key=api_key, api_root="https://analytics.zype.com")
 stream_hours = client.list_stream_hours().get()
 print(stream_hours().data)
 ```
+
+Supported resources
+
+```python
+dir(client) # ['list_consumers', 'list_stream_hours', 'list_subscriptions', 'list_videos']
+```
+
+Installation
+------------
+
+`$ pip install -U git+https://github.com/Dminor7/zype-python.git`
+
+
 License
 -------
 
